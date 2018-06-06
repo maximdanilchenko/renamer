@@ -8,10 +8,8 @@ from pprint import pprint
 
 def rename(pattern_file, path_to, pattern_from, pattern_to, rec):
     os.makedirs(path_to, exist_ok=True)
-    p = Path('.')
-    fls = list(p.glob('**/%s' % pattern_file if rec else pattern_file))
     errors = {}
-    for f in fls:
+    for f in Path('.').glob('**/%s' % pattern_file if rec else pattern_file):
         try:
             shutil.copy(f, Path(path_to).joinpath(re.sub(pattern_from,
                                                          pattern_to,
