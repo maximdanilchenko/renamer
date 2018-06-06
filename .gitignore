@@ -1,0 +1,8 @@
+*.pyc
+/.idea
+/.cache
+__pycache__
+__cache__
+.pytest_cache
+.coverage
+.coveragerc
